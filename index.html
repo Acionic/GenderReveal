@@ -40,7 +40,7 @@
       width: 100%;
       height: 100%;
       overflow: hidden;
-	
+  
     }
 
     .sc__container img {
@@ -48,7 +48,7 @@
       width: 100%;
       height: 100%;
       display: none; /* Initially hide the background image */
-		 
+     
     }
 
     .sc__container canvas {
@@ -58,15 +58,57 @@
       width: 100%;
       height: 100%;
     }
+
+    .support-btn {
+      position: absolute;
+      left: 7.5%;
+      bottom: 2.5%;
+      width: 44%;
+      min-width: 180px;
+      max-width: 260px;
+      padding: 12px 0;
+      background: linear-gradient(90deg, #f7b6d2 0%, #b6d7f7 100%);
+      color: #4a1413;
+      font-family: 'Open Sans', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 700;
+      border: none;
+      border-radius: 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+      text-align: center;
+      text-decoration: none;
+      letter-spacing: 1px;
+      transition: background 0.2s, box-shadow 0.2s, color 0.2s;
+      z-index: 10;
+      cursor: pointer;
+      outline: none;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .support-btn:hover, .support-btn:focus {
+      background: linear-gradient(90deg, #b6d7f7 0%, #f7b6d2 100%);
+      color: #fff;
+      box-shadow: 0 6px 24px rgba(0,0,0,0.15);
+    }
   </style>
 </head>
 
 <body>
+
   <div class="sc__wrapper">
     <div id="js--sc--container" class="sc__container">
       <img id="backgroundImage" src="./images/back.jpeg" alt="Background Image">
       <canvas id="scratchCanvas"></canvas>
     </div>
+    <a
+      href="https://www.amazon.com/baby-reg/emily-donithan-january-2026-newportnews/1DF0ENC01KCSX?ref_=cm_sw_r_apin_dp_W0CW0H18WE5WYM1G0W6Q&language=en_US"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="support-btn"
+      id="supportBtn"
+    >Help Us Welcome Baby Donithan – Registry</a>
   </div>
 
   <script type="text/javascript">
@@ -75,7 +117,7 @@
       const container = document.getElementById('js--sc--container');
       const backgroundImage = document.getElementById('backgroundImage');
       const ctx = canvas.getContext('2d');
-		
+    
 
       // Get the device pixel ratio
       const devicePixelRatio = window.devicePixelRatio || 1;
@@ -174,7 +216,8 @@
         iframe.style.width = '100%';
         iframe.style.height = '100%';
         iframe.style.border = 'none';
-        iframe.src = 'https://www.youtube.com/embed/T7ME7a10iDA/?autoplay=1&controls=1&rel=0';
+        // Use the correct embed URL for YouTube
+        iframe.src = 'https://www.youtube.com/embed/7zbkcIeEJsw?autoplay=1&controls=1&rel=0';
         iframe.title = 'YouTube video player';
         iframe.frameBorder = '0';
         iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen';
